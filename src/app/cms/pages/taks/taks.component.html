@@ -1,1 +1,20 @@
-<p>taks works!</p>
+<p>
+  <input
+    type="text"
+    [formControl]="newField"
+    [class.is-valid]="isNameFieldInvalid"
+    [class.valid]="isNameFieldIvalid"
+  />
+  <span
+    *ngIf="newField.touched && newField.hasError('required')"
+    [class.is-valid]="isNameFieldInvalid"
+    [class.valid]="isNameFieldIvalid"
+  >
+    <small>Campo requerido</small>
+  </span>
+  <span *ngIf="newField.touched && newField.hasError('maxlength')">
+    <small>Tamaño máximo superado</small>
+  </span>
+</p>
+<p> {{newField.value}} - {{newField.valid}}</p>
+<button [disabled]="newField.invalid">Envier</button>

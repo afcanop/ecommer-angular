@@ -1,8 +1,17 @@
 <div *ngIf="user">
-  <h1>Mi perfil</h1>
-  <p>Nombre {{user.name}}</p>
-  <p>Email {{user.email}}</p>
-  <p>Rol {{user.role}}</p>
 
-  <a routerLink="/cms" *ngIf="user.role === 'admin' ">CMS</a>
+  <div class="container-grid">
+
+    <aside>
+      <a routerLink="/cms" *ngIf="user.role === 'admin' ">CMS</a>
+
+    </aside>
+    <main>
+      <h1>Mi perfil</h1>
+      <p>Nombre {{user.name}}</p>
+      <p>Email {{user.email}}</p>
+      <p>Rol {{user.role}}</p>
+    </main>
+  </div>
+
 </div>

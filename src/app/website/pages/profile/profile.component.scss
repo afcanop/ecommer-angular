@@ -1,0 +1,24 @@
+.container-grid{
+  display: grid;
+  grid-auto-columns: 300px 1fr;
+  grid-template-areas: "aside main";
+  height: 100vh;
+}
+aside{
+  grid-area: aside;
+  padding: .2em .8em;
+}
+
+main{
+  grid-area: main;
+  padding: .2em .8em;
+  background-color: #f3f8fb;
+
+  h1{
+    font-size: 3em;
+  }
+
+  p{
+    margin: 10px 0px;
+  }
+}

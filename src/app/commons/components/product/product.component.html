@@ -4,6 +4,9 @@
 <h2 class="title">{{ product.price | currency }}</h2>
 <p>{{ product.title }}</p>
 <p class="category">{{ product.category.name }}</p>
-<!--<button (click)="onShowDetail()">Ver detalle</button>-->
-<a routerLink="." [queryParams]="{product: product.id}">Ver detalle</a>
-<button (click)="onAddToCart()">Add cart</button>
+<div class="opciones">
+  <a routerLink="." [queryParams]="{product: product.id}">Ver detalle</a>
+  <button (click)="onAddToCart()">
+    <img src="https://www.svgrepo.com/show/510783/add-plus-square.svg" width="20" height="20">
+  </button>
+</div>

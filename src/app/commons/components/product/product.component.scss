@@ -7,3 +7,9 @@ p, h2 {
 .category {
   font-style: italic;
 }
+.opciones{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: baseline;
+}

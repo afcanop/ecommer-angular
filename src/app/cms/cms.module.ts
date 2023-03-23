@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms'
 import { CmsRoutingModule } from './cms-routing.module';
 import { TaksComponent } from './pages/taks/taks.component';
 import { GridComponent } from './pages/grid/grid.component';
@@ -15,7 +15,8 @@ import { LayoutComponent } from './components/layout/layout.component';
   ],
   imports: [
     CommonModule,
-    CmsRoutingModule
+    CmsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CmsModule { }
