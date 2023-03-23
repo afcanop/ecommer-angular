@@ -1,20 +1,43 @@
-<p>
-  <input
-    type="text"
-    [formControl]="newField"
-    [class.is-valid]="isNameFieldInvalid"
-    [class.valid]="isNameFieldIvalid"
-  />
-  <span
-    *ngIf="newField.touched && newField.hasError('required')"
-    [class.is-valid]="isNameFieldInvalid"
-    [class.valid]="isNameFieldIvalid"
-  >
+<form [formGroup]="form" (ngSubmit)="save($event)">
+  <div formGroupName="fullName">
+    <p>
+      <input
+        type="text"
+        formControlName="name"
+        [class.is-valid]="isNameFieldInvalid"
+        [class.valid]="isNameFieldIvalid"
+      />
+      <span
+        *ngIf="nameField?.touched && nameField?.hasError('required')"
+        [class.is-valid]="isNameFieldInvalid"
+        [class.valid]="isNameFieldIvalid"
+      >
     <small>Campo requerido</small>
   </span>
-  <span *ngIf="newField.touched && newField.hasError('maxlength')">
+      <span *ngIf="nameField?.touched && nameField?.hasError('maxlength')">
     <small>Tamaño máximo superado</small>
   </span>
-</p>
-<p> {{newField.value}} - {{newField.valid}}</p>
-<button [disabled]="newField.invalid">Envier</button>
+    </p>
+    <p>
+      <input
+        type="text"
+        formControlName="last"
+        [class.is-valid]="isNameFieldInvalid"
+        [class.valid]="isNameFieldIvalid"
+      />
+      <span
+        *ngIf="lastField?.touched && lastField?.hasError('required')"
+        [class.is-valid]="isNameFieldInvalid"
+        [class.valid]="isNameFieldIvalid"
+      >
+    <small>Campo requerido</small>
+  </span>
+      <span *ngIf="lastField?.touched && lastField?.hasError('maxlength')">
+    <small>Tamaño máximo superado</small>
+  </span>
+    </p>
+  </div>
+
+  <p> {{lastField?.value}} - {{lastField?.valid}}</p>
+  <button type="submit" [disabled]="form.invalid">Envier</button>
+</form>

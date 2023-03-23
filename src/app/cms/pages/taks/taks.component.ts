@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms'
+import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms'
 
 @Component({
   selector: 'app-taks',
@@ -8,20 +8,53 @@ import {FormControl, Validators} from '@angular/forms'
 })
 export class TaksComponent implements OnInit {
 
+  // @ts-ignore
+  form: FormGroup;
 
-  newField = new FormControl(null,[ Validators.required, Validators.maxLength(10)], )
-
-  get isNameFieldIvalid() {
-    return this.newField.touched && this.newField.valid
-  }
-
-  get isNameFieldInvalid(){
-    return this.newField.touched && this.newField.invalid
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+    this.buildForm();
   }
 
   ngOnInit() {
-    console.log("hola")
-    this.newField.valueChanges.subscribe( data => {console.log(data)})
+    this.form.valueChanges.subscribe( data => {console.log(data)})
 
+  }
+
+  private buildForm(){
+    this.form = this.formBuilder.group({
+      "fullName": this.formBuilder.group({
+        "name": [null,[ Validators.required, Validators.maxLength(10)]],
+        "last": [null,[ Validators.required, Validators.maxLength(10)]],
+      }),
+      "celular": [null,[ Validators.required, Validators.maxLength(10)]],
+
+    })
+  }
+
+
+
+  get nameField(){
+    return this.form.get('fullName')?.get('name')
+  }
+
+  get lastField(){
+    return this.form.get('fullName')?.get('last')
+  }
+
+  get isNameFieldIvalid() {
+    return this.nameField?.valid && this.nameField?.touched
+  }
+
+  get isNameFieldInvalid(){
+    return this.nameField?.touched && this.nameField?.invalid
+  }
+
+
+
+  save(event: any){
+    console.log(event)
+    console.log(this.form.value)
   }
 }
