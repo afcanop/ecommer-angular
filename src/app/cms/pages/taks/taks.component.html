@@ -1,43 +1,61 @@
-<form [formGroup]="form" (ngSubmit)="save($event)">
-  <div formGroupName="fullName">
-    <p>
-      <input
-        type="text"
-        formControlName="name"
-        [class.is-valid]="isNameFieldInvalid"
-        [class.valid]="isNameFieldIvalid"
-      />
-      <span
-        *ngIf="nameField?.touched && nameField?.hasError('required')"
-        [class.is-valid]="isNameFieldInvalid"
-        [class.valid]="isNameFieldIvalid"
-      >
-    <small>Campo requerido</small>
-  </span>
-      <span *ngIf="nameField?.touched && nameField?.hasError('maxlength')">
-    <small>Tamaño máximo superado</small>
-  </span>
-    </p>
-    <p>
-      <input
-        type="text"
-        formControlName="last"
-        [class.is-valid]="isNameFieldInvalid"
-        [class.valid]="isNameFieldIvalid"
-      />
-      <span
-        *ngIf="lastField?.touched && lastField?.hasError('required')"
-        [class.is-valid]="isNameFieldInvalid"
-        [class.valid]="isNameFieldIvalid"
-      >
-    <small>Campo requerido</small>
-  </span>
-      <span *ngIf="lastField?.touched && lastField?.hasError('maxlength')">
-    <small>Tamaño máximo superado</small>
-  </span>
-    </p>
-  </div>
+<mat-card>
+  <mat-card-header>
+    <h1>Header</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="save($event)">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Outline form field</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </p>
+<!--      <div formGroupName="fullName">-->
+<!--          <mat-form-field>-->
+<!--            <mat-label>Name</mat-label>-->
+<!--            <input-->
+<!--              type="text"-->
+<!--              formControlName="name"-->
+<!--              [class.is-valid]="isNameFieldInvalid"-->
+<!--              [class.valid]="isNameFieldIvalid"-->
+<!--            />-->
+<!--            <span-->
+<!--              *ngIf="nameField?.touched && nameField?.hasError('required')"-->
+<!--              [class.is-valid]="isNameFieldInvalid"-->
+<!--              [class.valid]="isNameFieldIvalid"-->
+<!--            >-->
+<!--            <small>Campo requerido</small>-->
+<!--          </span>-->
+<!--            <span *ngIf="nameField?.touched && nameField?.hasError('maxlength')">-->
+<!--            <small>Tamaño máximo superado</small>-->
+<!--          </span>-->
+<!--          </mat-form-field>-->
 
-  <p> {{lastField?.value}} - {{lastField?.valid}}</p>
-  <button type="submit" [disabled]="form.invalid">Envier</button>
-</form>
+<!--        <p>-->
+<!--          <input-->
+<!--            type="text"-->
+<!--            formControlName="last"-->
+<!--            [class.is-valid]="isNameFieldInvalid"-->
+<!--            [class.valid]="isNameFieldIvalid"-->
+<!--          />-->
+<!--          <span-->
+<!--            *ngIf="lastField?.touched && lastField?.hasError('required')"-->
+<!--            [class.is-valid]="isNameFieldInvalid"-->
+<!--            [class.valid]="isNameFieldIvalid"-->
+<!--          >-->
+<!--    <small>Campo requerido</small>-->
+<!--  </span>-->
+<!--          <span *ngIf="lastField?.touched && lastField?.hasError('maxlength')">-->
+<!--    <small>Tamaño máximo superado</small>-->
+<!--  </span>-->
+<!--        </p>-->
+<!--      </div>-->
+
+<!--      <p> {{lastField?.value}} - {{lastField?.valid}}</p>-->
+<!--      <button type="submit" [disabled]="form.invalid">Envier</button>-->
+    </form>
+
+  </mat-card-content>
+</mat-card>

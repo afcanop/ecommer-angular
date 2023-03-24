@@ -5,6 +5,9 @@ import { CmsRoutingModule } from './cms-routing.module';
 import { TaksComponent } from './pages/taks/taks.component';
 import { GridComponent } from './pages/grid/grid.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { LayoutComponent } from './components/layout/layout.component';
   imports: [
     CommonModule,
     CmsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule
   ]
 })
 export class CmsModule { }

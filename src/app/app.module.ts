@@ -8,6 +8,7 @@ import {TimeInterceptor} from './interceptors/time.interceptor';
 import {TokenInterceptor} from './interceptors/token.interceptor';
 import {QuicklinkModule} from 'ngx-quicklink'
 import  {NgOptimizedImage } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import  {NgOptimizedImage } from '@angular/common';
     HttpClientModule,
     FormsModule,
     QuicklinkModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TimeInterceptor, multi: true},

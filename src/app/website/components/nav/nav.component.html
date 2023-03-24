@@ -38,11 +38,20 @@
       </ul>
     </nav>
     <div class="info">
+
+
+
       <div class="account">
         <button *ngIf="!profile; else elseBlock" (click)="login()">Login</button>
         <ng-template #elseBlock>
-          <a routerLink="/profile">{{ profile?.email }}</a>
-          <button (click)="logout()">Logout</button>
+
+          <button mat-button [matMenuTriggerFor]="menu">{{ profile?.email }}</button>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="/profile">Perfil</a>
+            <button mat-menu-item (click)="logout()">Logout</button>
+
+          </mat-menu>
+
         </ng-template>
       </div>
       <div class="cart">
