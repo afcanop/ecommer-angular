@@ -12,22 +12,21 @@ export class TaksComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
-  ) {
+    private formBuilder: FormBuilder,
+    ) {
     this.buildForm();
   }
 
   ngOnInit() {
     this.form.valueChanges.subscribe( data => {console.log(data)})
-
   }
 
   private buildForm(){
     this.form = this.formBuilder.group({
       "celular": [null,[ Validators.required, Validators.maxLength(10)]],
       "fullName": this.formBuilder.group({
-        "name": [null,[ Validators.required, Validators.maxLength(10), Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/)]],
-        "last": [null,[ Validators.required, Validators.maxLength(10), Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/)]],
+        "name": [null,[ Validators.required, Validators.maxLength(10)]],
+        "last": [null,[ Validators.required, Validators.maxLength(10)]],
       }),
     })
   }
@@ -46,7 +45,7 @@ export class TaksComponent implements OnInit {
     return this.form.get('celular')
   }
 
-  get isNameFieldIvalid() {
+  get isNameFieldValid() {
     return this.nameField?.valid && this.nameField?.touched
   }
 
@@ -54,7 +53,7 @@ export class TaksComponent implements OnInit {
     return this.nameField?.touched && this.nameField?.invalid
   }
 
-  get isLastFieldIvalid() {
+  get isLastFieldValid() {
     return this.lastField?.valid && this.lastField?.touched
   }
 
@@ -62,7 +61,7 @@ export class TaksComponent implements OnInit {
     return this.lastField?.touched && this.lastField?.invalid
   }
 
-  get isCelularFieldIvalid() {
+  get isCelularFieldValid() {
     return this.celularField?.valid && this.celularField?.touched
   }
 
