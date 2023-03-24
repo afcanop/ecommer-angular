@@ -6,7 +6,7 @@ import { MyValidators } from '../../../commons/validate/customValidate'
   templateUrl: './taks.component.html',
   styleUrls: ['./taks.component.scss']
 })
-export class TaksComponent implements OnInit {
+export class TaksComponent  {
 
   // @ts-ignore
   form: FormGroup;
@@ -17,15 +17,11 @@ export class TaksComponent implements OnInit {
     this.buildForm();
   }
 
-  ngOnInit() {
-    this.form.valueChanges.subscribe( data => {console.log(data)})
-  }
-
   private buildForm(){
     this.form = this.formBuilder.group({
       "celular": [null,[ Validators.required, Validators.maxLength(10), MyValidators.caracteresInvalidos]],
-      "fechaDesde": [null, ],
-      "fechaHasta": [null,],
+      "organizacion": ["organizacion", Validators.required],
+      "organizacionNombre": ["", Validators.required],
       "fullName": this.formBuilder.group({
         "name": [null,[ Validators.required, Validators.maxLength(10)]],
         "last": [null,[ Validators.required, Validators.maxLength(10)]],
@@ -33,6 +29,17 @@ export class TaksComponent implements OnInit {
     }, {
       validators: MyValidators.caracteresInvalidos
     })
+
+    this.organizacionField?.valueChanges
+      .subscribe(value =>{
+          if (value === 'organizacion'){
+            this.organizacionNombreField?.setValidators([ Validators.required])
+          } else {
+            this.organizacionNombreField?.setValidators(null)
+          }
+          this.organizacionNombreField?.updateValueAndValidity()
+      })
+
   }
 
 
@@ -47,6 +54,14 @@ export class TaksComponent implements OnInit {
 
   get celularField(){
     return this.form.get('celular')
+  }
+
+  get organizacionField(){
+    return this.form.get('organizacion')
+  }
+
+  get organizacionNombreField(){
+    return this.form.get('organizacionNombre')
   }
 
   get isNameFieldValid() {
@@ -74,7 +89,7 @@ export class TaksComponent implements OnInit {
   }
 
   save(event: any){
-    console.log(event)
+    // console.log(event)
     console.log(this.form.value)
   }
 }

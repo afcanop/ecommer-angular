@@ -37,7 +37,7 @@ export class AppComponent implements OnInit{
       role: 'admin'
     })
       .subscribe(rta => {
-        console.log(rta);
+        //console.log(rta);
       });
   }
 

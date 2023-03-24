@@ -5,10 +5,8 @@ export class MyValidators {
   static caracteresInvalidos(control: AbstractControl) {
     const numero = control.get('numero')?.value
     let valor = validarCarateres(numero)
-    console.log({'expre': valor})
-
     if(valor){
-      return {"numero": true}
+      return {"caracteresInvalidos": true}
     }
     return null
   }

@@ -16,6 +16,7 @@
           <mat-hint align="end">{{celularField?.value?.length }}/10</mat-hint>
           <mat-error *ngIf="celularField?.touched && celularField?.hasError('required')">Campo requerido</mat-error>
           <mat-error *ngIf="celularField?.touched && celularField?.hasError('max')">Tamaño máximo superado</mat-error>
+          <mat-error *ngIf="celularField?.touched && celularField?.hasError('caracteresInvalidos')">Caracteres invalidos</mat-error>
         </mat-form-field>
       </p>
       <div formGroupName="fullName">
@@ -48,6 +49,22 @@
           </mat-form-field>
         </p>
       </div>
+      <p>
+        <mat-radio-group aria-label="Select an option" formControlName="organizacion" >
+          <mat-radio-button value="organizacion" >Organización</mat-radio-button>
+          <mat-radio-button value="cliente" >Cliente</mat-radio-button>
+        </mat-radio-group>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre organización</mat-label>
+          <input
+            type="text"
+            formControlName="organizacionNombre"
+            matInput>
+          <mat-error *ngIf="lastField?.touched && lastField?.hasError('required')">Campo requerido</mat-error>
+        </mat-form-field>
+      </p>
       <button type="submit" mat-button color="#4cafe3" [disabled]="form.invalid">Envier</button>
     </form>
 
