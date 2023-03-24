@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {TaksComponent} from './pages/taks/taks.component';
 import {GridComponent} from './pages/grid/grid.component';
+import {CategoryComponent} from './pages/category/category.component';
 import {LayoutComponent} from './components/layout/layout.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'task',
         component: TaksComponent
+      },
+      {
+        path: 'category',
+        component: CategoryComponent
       }
     ]
   }

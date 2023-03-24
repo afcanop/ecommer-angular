@@ -12,13 +12,16 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatRadioModule} from "@angular/material/radio";
+import { CategoryComponent } from './pages/category/category.component';
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
   declarations: [
     TaksComponent,
     GridComponent,
-    LayoutComponent
+    LayoutComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +33,8 @@ import {MatRadioModule} from "@angular/material/radio";
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule
   ]
 })
 export class CmsModule { }
