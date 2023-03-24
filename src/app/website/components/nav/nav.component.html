@@ -47,9 +47,8 @@
 
           <button mat-button [matMenuTriggerFor]="menu">{{ profile?.email }}</button>
           <mat-menu #menu="matMenu">
-            <a mat-menu-item routerLink="/profile">Perfil</a>
+            <button mat-menu-item routerLink="/profile">Perfil</button>
             <button mat-menu-item (click)="logout()">Logout</button>
-
           </mat-menu>
 
         </ng-template>

@@ -34,7 +34,6 @@ export class AuthService {
     return this.http.get<User>(`${this.apiUrl}/profile`)
       .pipe(
         tap(user => {
-          console.log(user)
           return this.user.next(user)
         })
       );

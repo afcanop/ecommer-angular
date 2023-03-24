@@ -8,6 +8,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import {MatIconModule} from "@angular/material/icon";
     GridComponent,
     LayoutComponent
   ],
-  imports: [
-    CommonModule,
-    CmsRoutingModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatIconModule
-  ]
+    imports: [
+        CommonModule,
+        CmsRoutingModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatButtonModule
+    ]
 })
 export class CmsModule { }

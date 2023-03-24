@@ -42,7 +42,6 @@ export class CategoryComponent implements OnInit {
 
     this.route.queryParamMap.subscribe(data => {
       this.productId = data.get('product')
-      console.log(this.productId)
     })
 
   }
