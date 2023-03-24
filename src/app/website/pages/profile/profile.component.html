@@ -3,14 +3,28 @@
   <div class="container-grid">
 
     <aside>
-      <a routerLink="/cms" *ngIf="user.role === 'admin' ">CMS</a>
-
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><h1>Modulos</h1></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            <a routerLink="/cms" *ngIf="user.role === 'admin' ">CMS</a>
+          </p>
+        </mat-card-content>
+      </mat-card>
     </aside>
     <main>
-      <h1>Mi perfil</h1>
-      <p>Nombre {{user.name}}</p>
-      <p>Email {{user.email}}</p>
-      <p>Rol {{user.role}}</p>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><h1>Mi perfil</h1></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Nombre {{user.name}}</p>
+          <p>Email {{user.email}}</p>
+          <p>Rol {{user.role}}</p>
+        </mat-card-content>
+      </mat-card>
     </main>
   </div>
 

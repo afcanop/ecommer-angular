@@ -16,6 +16,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { LayoutComponent } from './components/layout/layout.component';
 import {QuicklinkModule} from 'ngx-quicklink'
 import {MatMenuModule} from "@angular/material/menu";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatMenuModule} from "@angular/material/menu";
         SwiperModule,
         CommonsModule,
         QuicklinkModule,
-        MatMenuModule
+        MatMenuModule,
+        MatCardModule
     ]
 })
 export class WebsiteModule { }

@@ -7,18 +7,10 @@
 aside{
   grid-area: aside;
   padding: .2em .8em;
+  height: 100vh;
 }
 
 main{
   grid-area: main;
   padding: .2em .8em;
-  background-color: #f3f8fb;
-
-  h1{
-    font-size: 3em;
-  }
-
-  p{
-    margin: 10px 0px;
-  }
 }
