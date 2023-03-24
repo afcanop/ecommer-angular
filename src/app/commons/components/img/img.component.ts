@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
 @Component({
   selector: 'app-img',
   templateUrl: './img.component.html',

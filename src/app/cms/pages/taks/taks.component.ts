@@ -25,8 +25,8 @@ export class TaksComponent implements OnInit {
   private buildForm(){
     this.form = this.formBuilder.group({
       "fullName": this.formBuilder.group({
-        "name": [null,[ Validators.required, Validators.maxLength(10)]],
-        "last": [null,[ Validators.required, Validators.maxLength(10)]],
+        "name": [null,[ Validators.required, Validators.maxLength(10), Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/)]],
+        "last": [null,[ Validators.required, Validators.maxLength(10), Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/)]],
       }),
       "celular": [null,[ Validators.required, Validators.maxLength(10)]],
 

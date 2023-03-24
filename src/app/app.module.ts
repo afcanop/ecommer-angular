@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {TimeInterceptor} from './interceptors/time.interceptor';
 import {TokenInterceptor} from './interceptors/token.interceptor';
 import {QuicklinkModule} from 'ngx-quicklink'
+import  {NgOptimizedImage } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {QuicklinkModule} from 'ngx-quicklink'
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    QuicklinkModule
+    QuicklinkModule,
+    NgOptimizedImage
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TimeInterceptor, multi: true},

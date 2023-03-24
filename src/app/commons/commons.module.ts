@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {RouterModule} from '@angular/router'
 import {ReversePipe} from './pipes/reverse.pipe'
 import {TimeAgoPipe} from './pipes/time-ago.pipe'
@@ -17,11 +17,12 @@ import {SwiperModule} from "swiper/angular";
     ReversePipe,
     ImgComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    SwiperModule,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        SwiperModule,
+        NgOptimizedImage,
+    ],
   exports:[
     ProductComponent,
     ProductsComponent,
