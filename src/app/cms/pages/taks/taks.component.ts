@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms'
-
+import { MyValidators } from '../../../commons/validate/customValidate'
 @Component({
   selector: 'app-taks',
   templateUrl: './taks.component.html',
@@ -23,11 +23,15 @@ export class TaksComponent implements OnInit {
 
   private buildForm(){
     this.form = this.formBuilder.group({
-      "celular": [null,[ Validators.required, Validators.maxLength(10)]],
+      "celular": [null,[ Validators.required, Validators.maxLength(10), MyValidators.caracteresInvalidos]],
+      "fechaDesde": [null, ],
+      "fechaHasta": [null,],
       "fullName": this.formBuilder.group({
         "name": [null,[ Validators.required, Validators.maxLength(10)]],
         "last": [null,[ Validators.required, Validators.maxLength(10)]],
       }),
+    }, {
+      validators: MyValidators.caracteresInvalidos
     })
   }
 

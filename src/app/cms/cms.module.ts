@@ -10,6 +10,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 
 @NgModule({
@@ -18,15 +19,16 @@ import {MatButtonModule} from "@angular/material/button";
     GridComponent,
     LayoutComponent
   ],
-    imports: [
-        CommonModule,
-        CmsRoutingModule,
-        ReactiveFormsModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatButtonModule
-    ]
+  imports: [
+    CommonModule,
+    CmsRoutingModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDatepickerModule
+  ]
 })
 export class CmsModule { }
